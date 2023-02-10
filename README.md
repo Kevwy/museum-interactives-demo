@@ -9,6 +9,8 @@ This is a demo project of a WIP revamp of the museum's interactive displays. The
 ## Design considerations
 - A hidden index page with credentials for staff use to provide easy access to different interactives
 - Database to provide text and images or fully static webpages?
+- Accessibility color scheme and typeset
+- Start with English, then add Te reo Maori support
 
 ## Progress Diary
 Upon receiving the assignment, my first move is to analyze and summarize the project brief to ensure a clear understanding and direction of the problem at hand. I make it a practice to create a hierarchical list of requirements and features before starting a project to act as a checklist as well as the ground zero for my brainstorms. This helps me visualize the workflow and more easily atomize the code structure for better planning of the code's design.

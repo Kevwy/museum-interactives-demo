@@ -1,0 +1,173 @@
+[
+	{
+		"title": {
+			"en": "South Island",
+			"reo": "Te Waipounamu"
+		},
+		"name": "south-island",
+		"slug": "south-island",
+		"description": {
+			"en": "Regional map",
+			"reo": "Mahere whenua"
+		},
+		"image": "./images/south-island/south-island.png",
+		"map": "./images/south-island/map.json",
+		"hotspots": [
+			{
+				"title": {
+					"en": "Tasman",
+					"reo": "Te Tai-o-Aorere"
+				},
+				"name": "tasman",
+				"slug": "south-island/tasman",
+				"description": {
+					"en": "Tasman Bay, the largest indentation in the north coast of the South Island, was named after Dutch seafarer, explorer and merchant Abel Tasman. He was the first European to discover New Zealand on 13 December 1642 while on an expedition for the Dutch East India Company. Tasman Bay passed the name on to the adjoining district, which was formed in 1989 largely from the merger of Waimea and Golden Bay counties.",
+					"reo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at mauris ornare, vehicula enim et, sagittis orci. Duis vehicula, urna malesuada semper tincidunt, sem lacus porttitor leo, eget facilisis magna erat non tellus. Fusce dignissim euismod interdum. Phasellus euismod, diam a varius condimentum, quam nulla laoreet lectus, varius tempus sem ligula at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lorem vitae sem dignissim gravida. In efficitur."
+				},
+				"image": "./images/south-island/tasman.jpg",
+				"orientation": "vertical"
+			},
+			{
+				"title": {
+					"en": "Nelson",
+					"reo": "Whakatū"
+				},
+				"name": "nelson",
+				"slug": "south-island/nelson",
+				"description": {
+					"en": "Nelson was named in honour of the Admiral Horatio Nelson who defeated both the French and Spanish fleets at the Battle of Trafalgar in 1805. Many roads and public areas around the city are named after people and ships associated with that battle and Trafalgar Street is the main shopping axis of the city. Inhabitants of Nelson are referred to as Nelsonians.",
+					"reo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at mauris ornare, vehicula enim et, sagittis orci. Duis vehicula, urna malesuada semper tincidunt, sem lacus porttitor leo, eget facilisis magna erat non tellus. Fusce dignissim euismod interdum. Phasellus euismod, diam a varius condimentum, quam nulla laoreet lectus, varius tempus sem ligula at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lorem vitae sem dignissim gravida. In efficitur."
+				},
+				"image": "./images/south-island/nelson.jpg",
+				"orientation": "vertical"
+			},
+			{
+				"title": {
+					"en": "Marlborough",
+					"reo": "Te Tauihu-o-te-waka"
+				},
+				"name": "marlborough",
+				"slug": "south-island/marlborough",
+				"description": {
+					"en": "Marlborough is known for its dry climate, the Marlborough Sounds, and Sauvignon blanc wine. It takes its name from the earlier Marlborough Province, which was named after General The 1st Duke of Marlborough, an English general and statesman.",
+					"reo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at mauris ornare, vehicula enim et, sagittis orci. Duis vehicula, urna malesuada semper tincidunt, sem lacus porttitor leo, eget facilisis magna erat non tellus. Fusce dignissim euismod interdum. Phasellus euismod, diam a varius condimentum, quam nulla laoreet lectus, varius tempus sem ligula at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lorem vitae sem dignissim gravida. In efficitur."
+				},
+				"image": "./images/south-island/marlborough.jpg",
+				"orientation": "vertical"
+			},
+			{
+				"title": {
+					"en": "West Coast",
+					"reo": "Te Tai Poutini"
+				},
+				"name": "west-coast",
+				"slug": "south-island/west-coast",
+				"description": {
+					"en": "The name Westland is used by some New Zealanders to refer to the whole of the West Coast, including Grey District, Buller District and Fiordland,[citation needed] and can also refer to the short-lived Westland Province of 1873–76.\nFiordland is on the west coast, but is in the Southland Region rather than the West Coast Region.\nInhabitants of the West Coast are colloquially known as \"Coasters\".",
+					"reo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at mauris ornare, vehicula enim et, sagittis orci. Duis vehicula, urna malesuada semper tincidunt, sem lacus porttitor leo, eget facilisis magna erat non tellus. Fusce dignissim euismod interdum. Phasellus euismod, diam a varius condimentum, quam nulla laoreet lectus, varius tempus sem ligula at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lorem vitae sem dignissim gravida. In efficitur."
+				},
+				"image": "./images/south-island/west-coast.jpg",
+				"orientation": "vertical"
+			},
+			{
+				"title": {
+					"en": "Canterbury",
+					"reo": "Waitaha"
+				},
+				"name": "canterbury",
+				"slug": "south-island/canterbury",
+				"description": {
+					"en": "The Canterbury Province was formed in 1853 following the passing of the New Zealand Constitution Act 1852. It was formed from part of New Munster Province and covered the middle part of the South Island, stretching from the east coast to the west coast. The province was abolished, along with other provinces of New Zealand, when the Abolition of the Provinces Act came into force on 1 Nov 1876. The modern Canterbury Region has slightly different boundaries, particularly in the north, where it includes some districts from the old Nelson Province.",
+					"reo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at mauris ornare, vehicula enim et, sagittis orci. Duis vehicula, urna malesuada semper tincidunt, sem lacus porttitor leo, eget facilisis magna erat non tellus. Fusce dignissim euismod interdum. Phasellus euismod, diam a varius condimentum, quam nulla laoreet lectus, varius tempus sem ligula at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lorem vitae sem dignissim gravida. In efficitur."
+				},
+				"image": "./images/south-island/canterbury.jpg",
+				"orientation": "vertical"
+			},
+			{
+				"title": {
+					"en": "Otago",
+					"reo": "Ōtākou"
+				},
+				"name": "otago",
+				"slug": "south-island/otago",
+				"description": {
+					"en": "The name \"Otago\" is the local southern Māori dialect pronunciation of \"Ōtākou\", the name of the Māori village near the entrance to Otago Harbour.The exact meaning of the term is disputed, with common translations being \"isolated village\" and \"place of red earth\", the latter referring to the reddish-ochre clay which is common in the area around Dunedin. \"Otago\" is also the old name of the European settlement on the harbour, established by the Weller Brothers in 1831, which lies close to Otakou. The upper harbour later became the focus of the Otago Association, an offshoot of the Free Church of Scotland, notable for its adoption of the principle that ordinary people, not the landowner, should choose the ministers.",
+					"reo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at mauris ornare, vehicula enim et, sagittis orci. Duis vehicula, urna malesuada semper tincidunt, sem lacus porttitor leo, eget facilisis magna erat non tellus. Fusce dignissim euismod interdum. Phasellus euismod, diam a varius condimentum, quam nulla laoreet lectus, varius tempus sem ligula at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lorem vitae sem dignissim gravida. In efficitur."
+				},
+				"image": "./images/south-island/otago.jpg",
+				"orientation": "vertical"
+			},
+			{
+				"title": {
+					"en": "Southland",
+					"reo": "Murihiku"
+				},
+				"name": "southland",
+				"slug": "south-island/southland",
+				"description": {
+					"en": "Southland (Māori: Murihiku, \"the last joint of the tail\") is New Zealand's southernmost region. It consists mainly of the southwestern portion of the South Island and Stewart Island/Rakiura. It includes Southland District, Gore District and the city of Invercargill. Murihiku Southland is bordered by the culturally similar Otago to the north and east, and the West Coast in the extreme northwest. The region covers over 3.1 million hectares and spans over 3,400 km of coast. As of June 2022, Southland has a population of 102,400, making it the eleventh-most-populous New Zealand region, and the second-most sparsely populated.",
+					"reo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at mauris ornare, vehicula enim et, sagittis orci. Duis vehicula, urna malesuada semper tincidunt, sem lacus porttitor leo, eget facilisis magna erat non tellus. Fusce dignissim euismod interdum. Phasellus euismod, diam a varius condimentum, quam nulla laoreet lectus, varius tempus sem ligula at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lorem vitae sem dignissim gravida. In efficitur."
+				},
+				"image": "./images/south-island/southland.jpg",
+				"orientation": "vertical"
+			}
+		],
+		"orientation": "vertical"
+	},
+	{
+		"title": {
+			"en": "Wheke, Sydney octopus",
+			"reo": "Wheke"
+		},
+		"name": "wheke",
+		"slug": "wheke",
+		"description": { "en": "Octopus tetricus", "reo": "Octopus tetricus" },
+		"image": "./images/wheke/wheke.png",
+		"map": "./images/wheke/map.json",
+		"hotspots": [
+			{
+				"title": {
+					"en": "Tricky wheke",
+					"reo": "He wheke huna"
+				},
+				"name": "wheke-1",
+				"slug": "wheke/wheke-1",
+				"description": {
+					"en": "A wheke (octopus) has no bones,\nso it can wedge its soft body into very small spaces. It is also expert at camouflage, helping it escape from predators. This species of wheke lives in tidal pools around Aotearoa.",
+					"reo": "Kāore he wheua ō te wheke, ā, ka kuhu noa tōna tinana ngohengohe ki ngā wāhi iti.\nHe tohunga hoki ki te mahi huna, e rere atu ai ia i ngā kaikonihi. E noho ana tēnei momo wheke ki ngā papawai huri noa i Aotearoa."
+				},
+				"image": "./images/wheke/1.jpg",
+				"orientation": "horizontal"
+			},
+			{
+				"title": {
+					"en": "Tricky wheke",
+					"reo": "He wheke huna"
+				},
+				"name": "wheke-2",
+				"slug": "wheke/wheke-2",
+				"description": {
+					"en": "A wheke (octopus) has no bones,\nso it can wedge its soft body into very small spaces. It is also expert at camouflage, helping it escape from predators. This species of wheke lives in tidal pools around Aotearoa.",
+					"reo": "Kāore he wheua ō te wheke, ā, ka kuhu noa tōna tinana ngohengohe ki ngā wāhi iti.\nHe tohunga hoki ki te mahi huna, e rere atu ai ia i ngā kaikonihi. E noho ana tēnei momo wheke ki ngā papawai huri noa i Aotearoa."
+				},
+				"image": "./images/wheke/2.jpg",
+				"orientation": "horizontal"
+			},
+			{
+				"title": {
+					"en": "Tricky wheke",
+					"reo": "He wheke huna"
+				},
+				"name": "wheke-3",
+				"slug": "wheke/wheke-3",
+				"description": {
+					"en": "A wheke (octopus) has no bones,\nso it can wedge its soft body into very small spaces. It is also expert at camouflage, helping it escape from predators. This species of wheke lives in tidal pools around Aotearoa.",
+					"reo": "Kāore he wheua ō te wheke, ā, ka kuhu noa tōna tinana ngohengohe ki ngā wāhi iti.\nHe tohunga hoki ki te mahi huna, e rere atu ai ia i ngā kaikonihi. E noho ana tēnei momo wheke ki ngā papawai huri noa i Aotearoa."
+				},
+				"image": "./images/wheke/3.jpg",
+				"orientation": "horizontal"
+			}
+		],
+		"orientation": "horizontal"
+	}
+]
