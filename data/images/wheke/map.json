@@ -1,0 +1,26 @@
+[
+  {
+    "name": "wheke-1",
+    "shape": "circle",
+    "id": "wheke-1",
+    "coords": [
+      1170,530,107
+    ]
+  },
+  {
+    "name": "wheke-2",
+    "shape": "circle",
+    "id": "wheke-2",
+    "coords": [
+      751,878,178
+    ]
+  },
+  {
+    "name": "wheke-3",
+    "shape": "circle",
+    "id": "wheke-3",
+    "coords": [
+      1223,1155,133
+    ]
+  }
+]
