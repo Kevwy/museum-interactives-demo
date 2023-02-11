@@ -5,8 +5,8 @@ import ExhibitContextProvider from "../utils/ExhibitContextProvider";
 import ExhibitPage from "../components/ExhibitPage";
 import "./ExhibitTemplate.module.less";
 
+
 const ExhibitTemplate = ({ data }) => {
-	console.debug("ExhibitTemplate");
 	return (
 		<ExhibitContextProvider>
 			<ExhibitPage data={data} />
