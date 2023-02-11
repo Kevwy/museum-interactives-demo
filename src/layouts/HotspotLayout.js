@@ -4,7 +4,7 @@ import { fullScreenWrapper } from "./styles.module.less";
 
 const HotspotLayout = ({ children, orientation, onHomeClick}) => {
   return (
-    <div className={`${fullScreenWrapper} ${orientation}`}>
+    <div className={orientation}>
       <HomeButton onClick={onHomeClick}/>
       {children}
       {/*<LangSwitch />*/}
