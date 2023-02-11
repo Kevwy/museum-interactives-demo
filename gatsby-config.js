@@ -2,6 +2,11 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+
+  siteMetadata: {
+    title: `Auckland Museum Interactive Displays`,
+  },
+
   plugins: [
     {
       resolve: "gatsby-source-filesystem",
@@ -16,4 +21,5 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-less",
   ],
+
 }
