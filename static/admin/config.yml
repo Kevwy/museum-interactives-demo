@@ -26,31 +26,60 @@ collections:
     folder: "content/exhibit"
     create: true
     extension : "json"
+    identifier_field: "name"
     summary: '{{fields.Title}}'
     slug: "{{slug}}"
 
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Title (Te Reo)", name: "titleReo", widget: "string", required: false}
-      - {label: "Description", name: "desc", widget: "text"}
-      - {label: "Description (Te Reo)", name: "descReo", widget: "text", required: false}
+      - {label: "Unique identifier name", name: "name", widget: "string"}
+
+      - label: "Title"
+        name: "title"
+        widget: "object"
+        summary: '{{fields.en}}'
+        fields:
+          - {label: "Title (English)", name: "en", widget: "string"}
+          - {label: "Title (Te Reo)", name: "reo", widget: "string", required: false}
+
+      - label: "Description"
+        name: "description"
+        widget: "object"
+        summary: '{{fields.en}}'
+        fields:
+          - {label: "Description (English)", name: "en", widget: "string"}
+          - {label: "Description (Te Reo)", name: "reo", widget: "string", required: false}
       - {label: "Image", name: "image", widget: "image"}
+
       - label: "Hotspots"
         name: "hotspots"
         widget: "list"
         summary: '"{{id}}": {{fields.title}}'
-        fields:
-          - label: "ID"
-            name: "id"
-            widget: "string"
-            hint: 'Unique ID used for hotspot mapping logic'
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Title (Te Reo)", name: "titleReo", widget: "string", required: false}
-          - {label: "Description", name: "desc", widget: "text"}
-          - {label: "Description (Te Reo)", name: "descReo", widget: "text", required: false}
-          - {label: "Image", name: "image", widget: "image"}
         hint: >
-          The "name" property of an image map must correspond to the "id" property of its hotspot. Multiple maps can refer to the same hotspot id.
+          The "name" property of an image map and its corresponding hotspot's "unique identifier name" must be the identical. Multiple maps can refer to the same hotspot id.
+        fields:
+          - label: "Unique identifier name"
+            name: "name"
+            widget: "string"
+            hint: 'Unique name used for hotspot mapping logic'
+
+          - label: "Title"
+            name: "title"
+            widget: "object"
+            summary: '{{fields.en}}'
+            fields:
+              - {label: "Title (English)", name: "en", widget: "string"}
+              - {label: "Title (Te Reo)", name: "reo", widget: "string", required: false}
+
+          - label: "Description"
+            name: "description"
+            widget: "object"
+            summary: '{{fields.en}}'
+            fields:
+              - {label: "Description (English)", name: "en", widget: "text"}
+              - {label: "Description (Te Reo)", name: "reo", widget: "text", required: false}
+
+          - {label: "Image", name: "image", widget: "image"}
+
       - label: "JSON image hotspot mapping"
         name: "imageMap"
         widget: "code"
