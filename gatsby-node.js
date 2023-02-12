@@ -1,4 +1,4 @@
-exports.createPages = async ({ graphql, actions: { createPage } }) => {
+export const createPages = async ({ graphql, actions: { createPage } }) => {
   const results = await graphql(`
     {
       allExhibitJson {
@@ -13,6 +13,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       }
     }
   `);
+
   results.data.allExhibitJson.edges.forEach((edge) => {
     const exhibit = edge.node;
     createPage({
