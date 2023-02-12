@@ -1,0 +1,54 @@
+{
+  "imageMap": {
+    "lang": "json",
+    "code": "[\n  {\n    \"name\": \"wheke-1\",\n    \"shape\": \"circle\",\n    \"id\": \"wheke-1\",\n    \"coords\": [\n      1170,530,107\n    ]\n  },\n  {\n    \"name\": \"wheke-2\",\n    \"shape\": \"circle\",\n    \"id\": \"wheke-2\",\n    \"coords\": [\n      751,878,178\n    ]\n  },\n  {\n    \"name\": \"wheke-3\",\n    \"shape\": \"circle\",\n    \"id\": \"wheke-3\",\n    \"coords\": [\n      1223,1155,133\n    ]\n  }\n]"
+  },
+  "name": "wheke",
+  "title": {
+    "en": "Wheke, Sydney octopus",
+    "reo": "Wheke"
+  },
+  "description": {
+    "en": "Octopus tetricus",
+    "reo": "Octopus tetricus"
+  },
+  "image": "/images/uploads/octopus.png",
+  "hotspots": [
+    {
+      "name": "wheke-1",
+      "title": {
+        "en": "Tricky wheke",
+        "reo": "He wheke huna"
+      },
+      "description": {
+        "en": "A wheke (octopus) has no bones, so it can wedge its soft body into very small spaces.\nIt is also expert at camouflage, helping it escape from predators. This species of wheke lives in tidal pools around Aotearoa.",
+        "reo": "Kāore he wheua ō te wheke, ā, ka kuhu noa tōna tinana ngohengohe ki ngā wāhi iti.\nHe tohunga hoki ki te mahi huna, e rere atu ai ia i ngā kaikonihi. E noho ana tēnei momo wheke ki ngā papawai huri noa i Aotearoa."
+      },
+      "image": "/images/uploads/1.jpg"
+    },
+    {
+      "name": "wheke-2",
+      "title": {
+        "en": "Tricky wheke",
+        "reo": "He wheke huna"
+      },
+      "description": {
+        "en": "A wheke (octopus) has no bones, so it can wedge its soft body into very small spaces.\nIt is also expert at camouflage, helping it escape from predators. This species of wheke lives in tidal pools around Aotearoa.",
+        "reo": "Kāore he wheua ō te wheke, ā, ka kuhu noa tōna tinana ngohengohe ki ngā wāhi iti.\nHe tohunga hoki ki te mahi huna, e rere atu ai ia i ngā kaikonihi. E noho ana tēnei momo wheke ki ngā papawai huri noa i Aotearoa."
+      },
+      "image": "/images/uploads/2.jpg"
+    },
+    {
+      "name": "wheke-3",
+      "description": {
+        "reo": "Kāore he wheua ō te wheke, ā, ka kuhu noa tōna tinana ngohengohe ki ngā wāhi iti.\nHe tohunga hoki ki te mahi huna, e rere atu ai ia i ngā kaikonihi. E noho ana tēnei momo wheke ki ngā papawai huri noa i Aotearoa.",
+        "en": "A wheke (octopus) has no bones, so it can wedge its soft body into very small spaces.\nIt is also expert at camouflage, helping it escape from predators. This species of wheke lives in tidal pools around Aotearoa."
+      },
+      "title": {
+        "en": "Tricky wheke",
+        "reo": "He wheke huna"
+      },
+      "image": "/images/uploads/3.jpg"
+    }
+  ]
+}
