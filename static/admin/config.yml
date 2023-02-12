@@ -1,0 +1,69 @@
+# For local testing of the NetlifyCMS admin interface:
+local_backend: true
+# 1. on a terminal, run the "start NetlifyCMS proxy" script or "npx netlify-cms-proxy-server"
+# 2. on a separate terminal, run "gatsby develop"
+
+backend:
+  name: github
+  repo: Kevwy/museum-interactives-demo
+  branch: main
+
+publish_mode: editorial_workflow
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+slug:
+  sanitize_replacement: "_"
+
+collections:
+  - name: "exhibits"
+    label: "Exhibits"
+    label_singular: "Exhibit"
+    folder: "content/exhibit"
+    create: true
+    extension : "json"
+    summary: '{{fields.Title}}'
+    slug: "{{slug}}"
+
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title (Te Reo)", name: "titleReo", widget: "string", required: false}
+      - {label: "Description", name: "desc", widget: "text"}
+      - {label: "Description (Te Reo)", name: "descReo", widget: "text", required: false}
+      - {label: "Image", name: "image", widget: "image"}
+      - label: "Hotspots"
+        name: "hotspots"
+        widget: "list"
+        summary: '"{{id}}": {{fields.title}}'
+        fields:
+          - label: "ID"
+            name: "id"
+            widget: "string"
+            hint: 'Unique ID used for hotspot mapping logic'
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Title (Te Reo)", name: "titleReo", widget: "string", required: false}
+          - {label: "Description", name: "desc", widget: "text"}
+          - {label: "Description (Te Reo)", name: "descReo", widget: "text", required: false}
+          - {label: "Image", name: "image", widget: "image"}
+        hint: >
+          The "name" property of an image map must correspond to the "id" property of its hotspot. Multiple maps can refer to the same hotspot id.
+      - label: "JSON image hotspot mapping"
+        name: "imageMap"
+        widget: "code"
+        default_language: "json"
+        hint: >
+          [{"name": string, "id": string, "shape": ["circle", "rect", "poly"], "coords": [number]}]
+
+    # Under development: Custom NetlifyCMS widget integration
+    #
+    #  - label: "Image Map",
+    #    name: "map",
+    #    widget: "list"
+    #    fields:
+    #      - {label: "Hotspot name", name: "name", widget: "string"}
+    #      - {label: "Hotspot ID", name: "id", widget: "string"}
+    #      - {label: "Shape", name: "shape", widget: "string"}
+    #      - label: "Coordinates"
+    #        name: "coords"
+    #        widget: "list"
+    #        collapsed: true

@@ -15,6 +15,7 @@ module.exports = {
         path: "./data/",
       },
     },
+    "gatsby-plugin-netlify-cms",
     "gatsby-plugin-image",
     "gatsby-transformer-json",
     "gatsby-transformer-sharp",

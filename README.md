@@ -45,3 +45,6 @@ Now to decide on the tech stack that I will be using, I must do some research on
 
 I have stumbled across a lot of unfamiliar technologies along the way, but I have managed to get my head around it, namely the structural difference between ReactJS and Gatsby's static site generation. I will continue writing this progress journal if I manage to make time for it.
 
+## Changes
+- Added gatsby-browser.js to pass context and remove margin from <body>
+- Add integration with NetlifyCMS
