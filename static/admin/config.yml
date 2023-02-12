@@ -27,7 +27,7 @@ collections:
     create: true
     extension : "json"
     identifier_field: "name"
-    summary: '{{fields.Title}}'
+    summary: '{{fields.Title.en}}'
     slug: "{{slug}}"
 
     fields:
@@ -48,12 +48,16 @@ collections:
         fields:
           - {label: "Description (English)", name: "en", widget: "string"}
           - {label: "Description (Te Reo)", name: "reo", widget: "string", required: false}
-      - {label: "Image", name: "image", widget: "image"}
+
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        allow_multiple: false
 
       - label: "Hotspots"
         name: "hotspots"
         widget: "list"
-        summary: '"{{id}}": {{fields.title}}'
+        summary: '"{{name}}": {{fields.title.en}}'
         hint: >
           The "name" property of an image map and its corresponding hotspot's "unique identifier name" must be the identical. Multiple maps can refer to the same hotspot id.
         fields:
@@ -78,12 +82,18 @@ collections:
               - {label: "Description (English)", name: "en", widget: "text"}
               - {label: "Description (Te Reo)", name: "reo", widget: "text", required: false}
 
-          - {label: "Image", name: "image", widget: "image"}
+          - label: "Image"
+            name: "image"
+            widget: "image"
+            allow_multiple: false
 
       - label: "JSON image hotspot mapping"
         name: "imageMap"
         widget: "code"
         default_language: "json"
+        allow_language_selection: false
+        keys: { code: 'json', lang: 'lang' }
+        output_code_only: true
         hint: >
           [{"name": string, "id": string, "shape": ["circle", "rect", "poly"], "coords": [number]}]
 
