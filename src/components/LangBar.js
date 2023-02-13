@@ -1,12 +1,5 @@
 import * as React from "react";
-import {
-	langBtn,
-	fixedBottom,
-	floatLeft,
-	floatRight,
-	fullWidth,
-	elevated,
-} from "./styles.module.less";
+import { langBtn, bottomBar } from "./components.module.scss";
 
 const LangBar = ({ onClick }) => {
 	const langSwitch = (lang) => {
@@ -14,17 +7,11 @@ const LangBar = ({ onClick }) => {
 	};
 
 	return (
-		<section className={`${fixedBottom} ${fullWidth} ${elevated}`}>
-			<btn
-				className={`${langBtn} ${floatLeft}`}
-				onClick={() => langSwitch("en")}
-			>
+		<section className={bottomBar}>
+			<btn className={langBtn} lang="en" onClick={() => langSwitch("en")}>
 				ENG
 			</btn>
-			<btn
-				className={`${langBtn} ${floatRight}`}
-				onClick={() => langSwitch("reo")}
-			>
+			<btn className={langBtn} lang="reo" onClick={() => langSwitch("reo")}>
 				REO
 			</btn>
 		</section>

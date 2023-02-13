@@ -5,11 +5,17 @@ import ImageMapper from "react-img-mapper";
 import {
 	landingImgWrapper,
 	hotspotImgWrapper,
-	horizontal,
-	vertical,
-} from "./styles.module.less";
+	horizontal, //TODO: #13 remove
+	vertical, //TODO: #13 remove
+} from "./components.module.scss";
 
-const ImageBox = ({ imageData, map = null, orientation, onClick, alt }) => {
+const ImageBox = ({
+	imageData,
+	map = null,
+	orientation, //TODO: #13 remove
+	onClick,
+	alt,
+}) => {
 	const [width, setWidth] = useState(100);
 	const [height, setHeight] = useState(100);
 
@@ -33,20 +39,21 @@ const ImageBox = ({ imageData, map = null, orientation, onClick, alt }) => {
 		const onAreaClick = (area) => {
 			onClick(area);
 		};
-		const imgWidth = Math.floor(height* imageData.presentationWidth / imageData.presentationHeight)
+		const imgWidth = Math.floor(
+			(height * imageData.presentationWidth) / imageData.presentationHeight
+		);
 		return (
 			<div
 				id="resize-watch"
-				className={`${landingImgWrapper} ${
-					orientation === "horizontal" ? horizontal : vertical
-				}`}
+				className={`${landingImgWrapper}
+			${orientation === "horizontal" ? horizontal : vertical} //TODO: #13 remove
+			`}
 			>
 				<ImageMapper
 					src={imageData.originalImg}
 					map={MAP}
 					responsive={true}
-					//natural={true}
-					imgWidth={imageData.presentationWidth }
+					imgWidth={imageData.presentationWidth}
 					parentWidth={imgWidth}
 					onClick={(area) => onAreaClick(area)}
 				/>
@@ -55,9 +62,9 @@ const ImageBox = ({ imageData, map = null, orientation, onClick, alt }) => {
 	}
 	return (
 		<div
-			className={`${hotspotImgWrapper} ${
-				orientation === "horizontal" ? horizontal : vertical
-			}`}
+			className={`${hotspotImgWrapper}
+			${orientation === "horizontal" ? horizontal : vertical} //TODO: #13 remove
+			`}
 		>
 			<GatsbyImage
 				image={imageData}

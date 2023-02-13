@@ -2,9 +2,9 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import ExhibitContextProvider from "../utils/ExhibitContextProvider";
 
-import ExhibitPage from "../components/ExhibitPage";
-import "./ExhibitTemplate.module.less";
+import "./templates.module.scss"
 
+import ExhibitPage from "../components/ExhibitPage";
 
 const ExhibitTemplate = ({ data }) => {
 	return (
@@ -67,3 +67,47 @@ export const query = graphql`
 		}
 	}
 `;
+
+/* TODO: #14 Switch to this query
+export const query = graphql`
+	query GetExhibitByName($name: String!) {
+		exhibitJson(name: { eq: $name }) {
+			name
+			title {
+				en
+				reo
+			}
+			description {
+				en
+				reo
+			}
+			hotspots {
+				title {
+					en
+					reo
+				}
+				description {
+					en
+					reo
+				}
+				name
+				image {
+					childImageSharp {
+						gatsbyImageData(quality: 100)
+					}
+				}
+			}
+			image {
+				childImageSharp {
+					fluid {
+						originalImg
+						presentationWidth
+						presentationHeight
+					}
+				}
+			}
+			imageMap
+		}
+	}
+`;
+*/

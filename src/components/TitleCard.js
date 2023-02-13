@@ -4,12 +4,14 @@ import {
 	titleTxtBox,
 	subtitleTxtBox,
 	instructionsTxtBox,
-} from "./styles.module.less";
+} from "./components.module.scss";
 
+//TODO: #11 render instructions conditionally
 const instructions = {
 	en: "Click on the hotspots to learn more",
 	reo: "Lorem Epsum"
 };
+
 const TitleCard = ({ title, subtitle = null, lang }) => {
 	if (subtitle) {
 		return (

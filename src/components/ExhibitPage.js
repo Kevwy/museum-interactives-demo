@@ -1,12 +1,15 @@
-import * as React from "react";
-import { useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { useIdleTimer } from "react-idle-timer";
+import { getImage, getSrc } from "gatsby-plugin-image";
+
+import { exhibitContext } from "../utils/ExhibitContextProvider";
+
 import TitleCard from "../components/TitleCard";
 import DescriptionCard from "../components/DescriptionCard";
 import LandingLayout from "../layouts/LandingLayout";
 import HotspotLayout from "../layouts/HotspotLayout";
 import ImageBox from "../components/ImageBox";
-import { exhibitContext } from "../utils/ExhibitContextProvider";
-import { useIdleTimer } from "react-idle-timer";
 
 const ExhibitPage = ({ data }) => {
 	const [
@@ -18,17 +21,23 @@ const ExhibitPage = ({ data }) => {
 		setHotspots,
 		isLanding,
 		setIsLanding,
-		orientation,
-		setOrientation,
+		orientation, //TODO #13: Remove
+		setOrientation, //TODO #13: Remove
 		lang,
 		setLang,
 	] = useContext(exhibitContext);
+
+	// Mount idle timer
+	const resetToLanding = () => {
+		setFocus(exhibit);
+		setIsLanding(true); //TODO: declare as handler function in context?
+	};
 
 	const onIdle = () => {
 		resetToLanding();
 	};
 
-	const { start } = useIdleTimer({
+	const { start: startTimer } = useIdleTimer({
 		onIdle,
 		timeout: 1000 * 60,
 		startOnMount: false,
@@ -37,11 +46,11 @@ const ExhibitPage = ({ data }) => {
 		throttle: 500,
 	});
 
+	// Set initial states
 	useEffect(() => {
-		console.debug("Initial useEffect");
 		setExhibit(data.exhibitJson);
 		setFocus(data.exhibitJson);
-		setOrientation(data.exhibitJson.orientation);
+		setOrientation(data.exhibitJson.orientation); //TODO #13: Remove
 		setIsLanding(true);
 		var hotspots = {};
 		data.exhibitJson.hotspots.map((hotspot) => {
@@ -51,21 +60,17 @@ const ExhibitPage = ({ data }) => {
 	}, []);
 
 	const exhibitImageData = data.exhibitJson.image.childImageSharp.fluid;
-	const exhibitImageMap = data.exhibitJson.map.childrenMapJson;
+	const exhibitImageMap = data.exhibitJson.map.childrenMapJson; //TODO #13: Change -> const exhibitImageMap = JSON.parse(data.exhibitJson.imageMap);
 
 	const switchLang = (lang) => {
 		setLang(lang);
 	};
 
 	const onAreaClick = (area) => {
+		// TODO: refactor! handleHotspotClick or move to encapsulated area
 		setFocus(hotspots[area.name]);
 		setIsLanding(false);
-		start();
-	};
-
-	const resetToLanding = () => {
-		setFocus(exhibit);
-		setIsLanding(true);
+		startTimer(); // start the idle timer
 	};
 
 	if (!exhibit) {
@@ -73,7 +78,10 @@ const ExhibitPage = ({ data }) => {
 	}
 	if (isLanding) {
 		return (
-			<LandingLayout orientation={orientation} onLangBtnClick={switchLang}>
+			<LandingLayout
+				orientation={orientation}	//TODO #13: Remove
+				onLangBtnClick={switchLang}
+			>
 				<TitleCard
 					title={exhibit.title}
 					subtitle={exhibit.description}
@@ -83,23 +91,27 @@ const ExhibitPage = ({ data }) => {
 					imageData={exhibitImageData}
 					map={exhibitImageMap}
 					alt={exhibit.title}
-					orientation={orientation}
+					orientation={orientation}	//TODO #13: Remove
 					onClick={onAreaClick}
 				/>
 			</LandingLayout>
 		);
 	}
 	return (
-		<HotspotLayout orientation={orientation} onHomeClick={resetToLanding} onLangBtnClick={switchLang}>
-			<TitleCard title={focus.title} lang={lang}/>
+		<HotspotLayout
+			orientation={orientation} //TODO #13: Remove
+			onHomeClick={resetToLanding}
+			onLangBtnClick={switchLang}
+		>
+			<TitleCard title={focus.title} lang={lang} />
 			<ImageBox
 				imageData={focus.image.childImageSharp.gatsbyImageData}
 				alt={focus.title}
-				orientation={orientation}
+				orientation={orientation} //TODO #13: Remove
 			/>
 			<DescriptionCard
 				description={focus.description}
-				orientation={orientation}
+				orientation={orientation} //TODO #13: Remove
 				lang={lang}
 			/>
 		</HotspotLayout>

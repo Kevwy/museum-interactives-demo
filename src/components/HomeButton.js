@@ -1,6 +1,6 @@
 import * as React from "react";
-import HomeIcon from "@mui/icons-material/Home";
-import { homeBtn, fixedTop, fullWidth, elevated } from "./styles.module.less";
+import { SlHome } from "react-icons/sl";
+import { homeBtn, topBar } from "./components.module.scss";
 
 const HomeButton = ({onClick}) => {
 
@@ -9,9 +9,9 @@ const HomeButton = ({onClick}) => {
 	};
 
 	return (
-		<section className={`${fixedTop} ${fullWidth} ${elevated}`}>
+		<section className={topBar}>
 			<btn className={homeBtn} onClick={() => onHomeClick()}>
-				<HomeIcon fontSize="large" />
+				<SlHome />
 			</btn>
 		</section>
 	);

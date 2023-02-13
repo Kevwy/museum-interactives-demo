@@ -1,19 +1,27 @@
+@use "styles/mixins" as *;
 // Variables
-@descriptionCardColor: rgba(51, 51, 51);
-@descriptionCardTextColor: white;
+$descriptionCardColor: rgba(51, 51, 51);
+$descriptionCardTextColor: white;
 
 //Components
 .homeBtn {
 	align-self: center;
-	.floatRight();
+	@include float(right);
 	> HomeIcon {
 		padding: 2px;
 	}
 }
-
+.langBtn {
+	&:lang(en) {
+		@include float(left);
+	}
+	&:lang(reo) {
+		@include float(right);
+	}
+}
 
 .titleCard {
-	.elevated();
+	@include elevation(2);
 	position: absolute;
 	display: flex;
 	flex-direction: column;
@@ -50,7 +58,7 @@
 
 .descriptionCard {
 	width: 60%;
-	.foreground();
+	@include elevation(1);
 	background-color: rgba(128, 128, 128, 0.856);
 	border-bottom: 5px outset whitesmoke;
 	color: black;
@@ -58,20 +66,20 @@
 	text-align: justify;
 	position: absolute;
 	bottom: 0;
-	.floatLeft();
+	@include float(left);
 	& > div {
-    background-color: #dad9d9da;
-    border-top-right-radius: 10px;
-    box-shadow: rgba(39, 39, 39, 0.555) 0 1em 1.5em;
-    & > p {
-      padding: 2em;
-      margin-block-end: 0;
-      margin-block-start: 0;
-    }
-    &::first-letter {
-      font-size: 120%;
-      font-weight: 400;
-    }
+		background-color: #dad9d9da;
+		border-top-right-radius: 10px;
+		box-shadow: rgba(39, 39, 39, 0.555) 0 1em 1.5em;
+		& > p {
+			padding: 2em;
+			margin-block-end: 0;
+			margin-block-start: 0;
+		}
+		&::first-letter {
+			font-size: 120%;
+			font-weight: 400;
+		}
 	}
 	&.horizontal {
 		width: 33vw;
@@ -84,27 +92,36 @@
 			width: 90%;
 		}
 	}
-  &.vertical {
-    height: 33%;
-    width: 100%;
-    display: flex;
-    .fixedBottom();
-    & > .descriptionContent {
-      padding: 0em;
-      position: absolute;
-      bottom: 0;
-      vertical-align: middle;
-      width: 90%;
-    }
-  }
+	&.vertical {
+		height: 33%;
+		width: 100%;
+		display: flex;
+		@include fixed(bottom);
+		& > .descriptionContent {
+			padding: 0em;
+			position: absolute;
+			bottom: 0;
+			vertical-align: middle;
+			width: 90%;
+		}
+	}
 }
 
+.topBar {
+	@include fullWidth;
+	@include fixed(top);
+}
+
+.bottomBar {
+	@include fullWidth;
+	@include fixed(bottom);
+}
 
 .landingImgWrapper {
+	@include  elevation(0);
 	position: absolute;
 	display: flex;
 	justify-content: center;
-	.background();
 	width: 100%;
 	height: 80vh;
 
@@ -119,10 +136,10 @@
 }
 
 .hotspotImgWrapper {
+	@include  elevation(0);
 	position: absolute;
 	display: flex;
 	justify-content: center;
-	.background();
 	&.horizontal {
 		top: 0vh;
 		left: 33vw;
@@ -138,39 +155,4 @@
 		bottom: 0;
 		width: 100vw;
 	}
-}
-
-// Modifiers
-.fullWidth {
-	width: 100%;
-}
-
-.fixedBottom {
-	position: absolute;
-	bottom: 0;
-}
-
-.fixedTop {
-	position: absolute;
-	top: 0;
-}
-
-.floatRight {
-	float: right;
-}
-
-.floatLeft {
-	float: left;
-}
-
-.background {
-	z-index: 0;
-}
-
-.foreground {
-	z-index: 1;
-}
-
-.elevated {
-	z-index: 2;
 }
