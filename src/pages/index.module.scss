@@ -1,3 +1,5 @@
+@use "styles/mixins" as *;
+
 .landingPage {
 	content: block;
 	margin: 0 auto 0 auto;
@@ -10,3 +12,5 @@
 	justify-content: center;
 }
 
+// Show borders for designing
+// @include showOutlines(".", "landingPage"); //FIXME: Border outlines for CSS designing

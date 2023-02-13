@@ -3,21 +3,23 @@ import {
 	descriptionContent,
 	descriptionCard,
 	descriptionTxt,
-	vertical,
 	horizontal,
-} from "./styles.module.less";
+	vertical,
+} from "./components.module.scss";
 
-const DescriptionCard = ({ description, orientation, lang }) => {
+const DescriptionCard = ({
+	description,
+	orientation, //TODO: #13 remove
+	lang,
+}) => {
 	return (
 		<div
-			className={`${descriptionCard} ${
-				orientation === "horizontal" ? horizontal : vertical
-			}`}
+			className={`${descriptionCard}
+			${orientation === "horizontal" ? horizontal : vertical} //TODO: #13 remove
+			`}
 		>
 			<div className={descriptionContent}>
-				<p className={descriptionTxt}>
-					{description[lang]}
-				</p>
+				<p className={descriptionTxt}>{description[lang]}</p>
 			</div>
 		</div>
 	);

@@ -1,0 +1,55 @@
+@mixin float($direction) {
+	float: $direction;
+}
+
+@mixin fixed($direction) {
+	position: absolute;
+	#{$direction}: 0;
+	width: 100%;
+}
+
+@mixin prefix($property, $value, $prefixes) {
+	@each $prefix in $prefixes {
+		-#{$prefix}-#{$property}: $value;
+	}
+	#{$property}: $value;
+}
+
+@mixin elevation($number) {
+	z-index: $number;
+}
+
+@mixin fullWidth {
+	width: 100%;
+}
+
+
+@mixin showOutlines($prefix, $selector) {
+	div {
+		border-style: solid;
+		border-width: 1px;
+		box-sizing: border-box;
+	}
+
+	#{$prefix}#{$selector} {
+		border-color: red;
+		> div {
+			border-color: orange;
+			> div {
+				border-color: yellow;
+				> div {
+					border-color: green;
+					> div {
+						border-color: blue;
+						> div {
+							border-color: magenta;
+							> div {
+								border-color: purple;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
