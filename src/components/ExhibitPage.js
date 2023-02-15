@@ -43,6 +43,7 @@ const ExhibitPage = ({ data }) => {
 	};
 
 	const { start: startTimer } = useIdleTimer({
+	const { start: startTimer } = useIdleTimer({
 		onIdle,
 		timeout: 1000 * 60,
 		startOnMount: false,
@@ -117,6 +118,21 @@ const ExhibitPage = ({ data }) => {
 			</>
 		);
 	}
+	return (
+		<HotspotLayout orientation={orientation} onHomeClick={resetToLanding} onLangBtnClick={switchLang}>
+			<TitleCard title={focus.title} lang={lang}/>
+			<ImageBox
+				imageData={focus.image.childImageSharp.gatsbyImageData}
+				alt={focus.title}
+				orientation={orientation}
+			/>
+			<DescriptionCard
+				description={focus.description}
+				orientation={orientation}
+				lang={lang}
+			/>
+		</HotspotLayout>
+	);
 };
 
 export default ExhibitPage;

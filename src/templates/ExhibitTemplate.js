@@ -208,13 +208,26 @@ export const query = graphql`
 				childImageSharp {
 					fluid {
 						originalImg
-						presentationWidth
 						presentationHeight
+						presentationWidth
 					}
+					gatsbyImageData(quality: 100)
+					original {
+						height
+						width
+					}
+				}
+			}
+			map {
+				childrenMapJson {
+					name
+					id
+					shape
+					coords
+					id
 				}
 			}
 			imageMap
 		}
 	}
 `;
-*/
