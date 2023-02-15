@@ -43,7 +43,6 @@ const ExhibitPage = ({ data }) => {
 	};
 
 	const { start: startTimer } = useIdleTimer({
-	const { start: startTimer } = useIdleTimer({
 		onIdle,
 		timeout: 1000 * 60,
 		startOnMount: false,
