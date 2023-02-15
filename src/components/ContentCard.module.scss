@@ -38,7 +38,6 @@ $contentCardTextColor: black;
 			position: absolute;
 			bottom: 0;
 			vertical-align: text-bottom;
-			width: 90%;
 		}
 	}
 	@media (orientation: portrait) {
@@ -46,13 +45,15 @@ $contentCardTextColor: black;
 		height: 33%;
 		width: 100%;
 		display: flex;
+		align-items: center;
 		@include fixed(bottom);
 		& > .contentTextBox {
 			padding: 0em;
-			position: absolute;
-			bottom: 0;
+			//position: absolute;
+			top: 0;
 			vertical-align: middle;
-			width: 90%;
+			height: fit-content;
+			border-bottom-right-radius: 10px;
 		}
 	}
 }

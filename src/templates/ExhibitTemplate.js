@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { useIdleTimer } from "react-idle-timer";
@@ -12,10 +12,7 @@ import HomeButton from "../components/HomeButton";
 
 import { ExhibitContext } from "../contexts/ExhibitContext";
 
-import {
-	landingImgWrapper,
-	hotspotImgWrapper,
-} from "./ExhibitTemplate.module.scss";
+import { hotspotImgWrapper } from "./ExhibitTemplate.module.scss";
 
 const ExhibitTemplate = ({ data }) => {
 	const [exhibit, setExhibit] = useContext(ExhibitContext);
@@ -24,7 +21,7 @@ const ExhibitTemplate = ({ data }) => {
 	const [focus, setFocus] = useState(data.exhibitJson);
 	const [isLanding, setIsLanding] = useState(true);
 	const [lang, setLang] = useState("en");
-
+	const hotspots = data.exhibitJson.hotspots;
 	// Mount idle timer
 	const onIdle = () => {
 		resetToLanding();
@@ -66,7 +63,7 @@ const ExhibitTemplate = ({ data }) => {
 	};
 
 	const handleHotspotClick = (area) => {
-		setFocus(exhibit.hotspots.find((hotspot) => hotspot.name === area.name));
+		setFocus(hotspots.find((hotspot) => hotspot.name === area.name));
 		setIsLanding(false);
 		startTimer(); // start the idle timer
 	};
@@ -80,6 +77,8 @@ const ExhibitTemplate = ({ data }) => {
 					img={exhibitImageSharp.fluid}
 					map={exhibitImageMap}
 					alt={data.exhibitJson.title.en}
+					srcWidth={exhibitImageSharp.original.width}
+					srcHeight={exhibitImageSharp.original.height}
 					onClick={handleHotspotClick}
 				/>
 				{/* //TODO: InteractiveImage component logic

@@ -2,7 +2,7 @@
 @use "styles/mixins" as *;
 
 .titleCard {
-	@include elevation(2);
+	@include elevation (2);
 	position: absolute;
 	display: flex;
 	flex-direction: column;
@@ -11,10 +11,14 @@
 	background-color: rgba(26, 26, 26, 0.65);
 	border-bottom: 2px inset whitesmoke;
 	color: white;
-	padding: 0 0 0 4em;
-	min-width: 25em;
+	min-width: 25rem;
+	box-sizing: border-box;
 	border-radius: 0 16px 16px, 0;
-	padding-right: 3em;
+	padding-left: 3rem;
+	padding-right: 10rem;
+	@media (orientation: landscape) {
+		width: 33vw;
+	}
 }
 
 .titleTextBox {
@@ -30,6 +34,7 @@
 }
 
 .instructionsTextBox {
+	width: max-content;
 	translate: 2em 1em;
 	padding: 0.3em 1em;
 	background-color: #ffffff;

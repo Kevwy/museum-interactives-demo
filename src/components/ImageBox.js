@@ -1,19 +1,17 @@
-import { GatsbyImage } from "gatsby-plugin-image";
 import * as React from "react";
 import { useState, useEffect } from "react";
 import ImageMapper from "react-img-mapper";
 import { landingImgWrapper } from "./ImageBox.module.scss";
 
-const ImageBox = ({ img, map = null, onClick, alt }) => {
-	const [width, setWidth] = useState(100);
-	const [height, setHeight] = useState(100);
+const ImageBox = ({ img, map = null, srcWidth, srcHeight, onClick, alt }) => {
+	const [width, setWidth] = useState(1080);
+	const [height, setHeight] = useState(1920);
 
 	useEffect(() => {
 		const resizeObserver = new ResizeObserver((event) => {
 			setWidth(event[0].contentBoxSize[0].inlineSize);
 			setHeight(event[0].contentBoxSize[0].blockSize);
 		});
-		console.log(`${width}, ${height}`);
 		resizeObserver.observe(document.getElementById("resize-watch"));
 	});
 
@@ -25,9 +23,9 @@ const ImageBox = ({ img, map = null, onClick, alt }) => {
 	const onAreaClick = (area) => {
 		onClick(area);
 	};
-	const imgWidth = Math.floor(
-		(height * img.presentationWidth) / img.presentationHeight
-	);
+
+	const imgWidth =
+		width === 1080 ? 1080 : Math.floor((height * srcWidth) / srcHeight);
 	//FIXME: #13 orientation was in <div> (ImageBox)
 	return (
 		<div id="resize-watch" className={landingImgWrapper}>

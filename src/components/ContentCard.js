@@ -2,7 +2,6 @@ import * as React from "react";
 import {
 	contentCard,
 	contentTextBox,
-	contentText,
 } from "./ContentCard.module.scss";
 
 const ContentCard = ({ description, lang }) => {
@@ -10,7 +9,7 @@ const ContentCard = ({ description, lang }) => {
 	return (
 		<div className={contentCard}>
 			<div className={contentTextBox}>
-				<p className={contentText}>{description[lang]}</p>
+				<p>{description[lang]}</p>
 			</div>
 		</div>
 	);
