@@ -47,7 +47,8 @@ p {
 	line-height: 1.6em;
 }
 
-btn {
+button {
+	@include elevation(3);
 	font: {
 		family: $fontFamily;
 		style: normal;
@@ -63,7 +64,6 @@ btn {
 
 	display: inline-flex;
 	align-items: center;
-    @include elevation(3);
 
 	height: 4rem;
 	box-sizing: border-box;
@@ -86,5 +86,39 @@ btn {
 		box-shadow: rgba(39, 35, 71, 0.5) 0 1px 30px;
 		transition-duration: 0.1s;
 		border-bottom: rgba(128, 128, 128, 0.37) outset 2px;
+	}
+}
+
+.landingImgWrapper {
+	@include elevation(0);
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 80vh;
+
+	@media (orientation: landscape) {
+		top: 10vh;
+		bottom: 5vh;
+	}
+	@media (orientation: portrait){
+		bottom: 5vh;
+	}
+}
+
+.hotspotImgWrapper {
+	@include elevation(0);
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	@media (orientation: landscape) {
+		left: 33vw;
+		width: 67vw;
+		height: 100vh;
+	}
+	@media (orientation: portrait) {
+		bottom: 33vh;
+		height: 67vh;
+		width: 100vw;
 	}
 }

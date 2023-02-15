@@ -1,158 +1,17 @@
 @use "styles/mixins" as *;
-// Variables
-$descriptionCardColor: rgba(51, 51, 51);
-$descriptionCardTextColor: white;
 
 //Components
 .homeBtn {
 	align-self: center;
-	@include float(right);
-	> HomeIcon {
+	@include atCorner (top, right, 0, 0);
+	> * {
 		padding: 2px;
 	}
 }
 .langBtn {
+	text-transform: uppercase;
+	@include atCorner (bottom, right, 0, 0);
 	&:lang(en) {
-		@include float(left);
-	}
-	&:lang(reo) {
-		@include float(right);
-	}
-}
-
-.titleCard {
-	@include elevation(2);
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	margin-top: 1.5em;
-	left: 0;
-	background-color: rgba(26, 26, 26, 0.65);
-	border-bottom: 2px inset whitesmoke;
-	color: white;
-	padding: 0 0 0 4em;
-	min-width: 25em;
-	border-radius: 0 16px 16px, 0;
-	padding-right: 3em;
-}
-
-.titleTxtBox {
-	width: fit-content;
-	& > h1 {
-		margin-bottom: 0.2em;
-	}
-}
-
-.subtitleTxtBox {
-	margin-top: 0;
-	width: fit-content;
-}
-
-.instructionsTxtBox {
-	translate: 2em 1em;
-	padding: 0.3em 1em;
-	background-color: #ffffff;
-	color: grey;
-	border: rgba(0, 0, 0, 0.25) solid 2px;
-}
-
-.descriptionCard {
-	width: 60%;
-	@include elevation(1);
-	background-color: rgba(128, 128, 128, 0.856);
-	border-bottom: 5px outset whitesmoke;
-	color: black;
-	font-optical-sizing: auto;
-	text-align: justify;
-	position: absolute;
-	bottom: 0;
-	@include float(left);
-	& > div {
-		background-color: #dad9d9da;
-		border-top-right-radius: 10px;
-		box-shadow: rgba(39, 39, 39, 0.555) 0 1em 1.5em;
-		& > p {
-			padding: 2em;
-			margin-block-end: 0;
-			margin-block-start: 0;
-		}
-		&::first-letter {
-			font-size: 120%;
-			font-weight: 400;
-		}
-	}
-	&.horizontal {
-		width: 33vw;
-		height: 100%;
-		& > .descriptionContent {
-			padding: 1em 1em 1em 0.5em;
-			position: absolute;
-			bottom: 0;
-			vertical-align: text-bottom;
-			width: 90%;
-		}
-	}
-	&.vertical {
-		height: 33%;
-		width: 100%;
-		display: flex;
-		@include fixed(bottom);
-		& > .descriptionContent {
-			padding: 0em;
-			position: absolute;
-			bottom: 0;
-			vertical-align: middle;
-			width: 90%;
-		}
-	}
-}
-
-.topBar {
-	@include fullWidth;
-	@include fixed(top);
-}
-
-.bottomBar {
-	@include fullWidth;
-	@include fixed(bottom);
-}
-
-.landingImgWrapper {
-	@include  elevation(0);
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	height: 80vh;
-
-	&.horizontal {
-		top: 10vh;
-		bottom: 5vh;
-	}
-	&.vertical {
-		top: 20vh;
-		bottom: 5vh;
-	}
-}
-
-.hotspotImgWrapper {
-	@include  elevation(0);
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	&.horizontal {
-		top: 0vh;
-		left: 33vw;
-		bottom: 0vh;
-		width: 67vw;
-		height: 100vh;
-	}
-	&.vertical {
-		//flex-direction: column-reverse;
-		left: 0;
-		right: 0;
-		height: 100vh;
-		bottom: 0;
-		width: 100vw;
+		@include atCorner (bottom, left, 0, 0); // English language button always on the bottom left
 	}
 }

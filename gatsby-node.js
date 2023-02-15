@@ -5,9 +5,6 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         edges {
           node {
             slug
-            hotspots {
-              slug
-            }
           }
         }
       }

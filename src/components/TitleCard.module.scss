@@ -1,0 +1,38 @@
+
+@use "styles/mixins" as *;
+
+.titleCard {
+	@include elevation(2);
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	margin-top: 1.5em;
+	left: 0;
+	background-color: rgba(26, 26, 26, 0.65);
+	border-bottom: 2px inset whitesmoke;
+	color: white;
+	padding: 0 0 0 4em;
+	min-width: 25em;
+	border-radius: 0 16px 16px, 0;
+	padding-right: 3em;
+}
+
+.titleTextBox {
+	width: fit-content;
+	& > h1 {
+		margin-bottom: 0.2em;
+	}
+}
+
+.subtitleTextBox {
+	margin-top: 0;
+	width: fit-content;
+}
+
+.instructionsTextBox {
+	translate: 2em 1em;
+	padding: 0.3em 1em;
+	background-color: #ffffff;
+	color: grey;
+	border: rgba(0, 0, 0, 0.25) solid 2px;
+}

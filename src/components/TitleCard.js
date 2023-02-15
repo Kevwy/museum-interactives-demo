@@ -1,10 +1,10 @@
 import * as React from "react";
 import {
 	titleCard,
-	titleTxtBox,
-	subtitleTxtBox,
-	instructionsTxtBox,
-} from "./components.module.scss";
+	titleTextBox,
+	subtitleTextBox,
+	instructionsTextBox,
+} from "./TitleCard.module.scss";
 
 //TODO: #11 render instructions conditionally
 const instructions = {
@@ -16,13 +16,13 @@ const TitleCard = ({ title, subtitle = null, lang }) => {
 	if (subtitle) {
 		return (
 			<section className={titleCard}>
-				<div className={titleTxtBox}>
+				<div className={titleTextBox}>
 					<h1>{title[lang]}</h1>
 				</div>
-				<div className={subtitleTxtBox}>
+				<div className={subtitleTextBox}>
 					<h2>{subtitle[lang]}</h2>
 				</div>
-				<div className={instructionsTxtBox}>
+				<div className={instructionsTextBox}>
 					<h3>{instructions[lang]}</h3>
 				</div>
 			</section>

@@ -1,0 +1,58 @@
+
+@use "styles/mixins" as *;
+
+$contentCardColor: rgba(128, 128, 128, 0.856);
+$contentCardTextColor: black;
+
+.contentCard {
+	width: 60%;
+	@include elevation(1);
+	background-color: $contentCardColor;
+	border-bottom: 5px outset whitesmoke;
+	color: $contentCardTextColor;
+	font-optical-sizing: auto;
+	text-align: justify;
+	position: absolute;
+	bottom: 0;
+	@include float(left);
+	& > div {
+		background-color: #dad9d9da;
+		border-top-right-radius: 10px;
+		box-shadow: rgba(39, 39, 39, 0.555) 0 1em 1.5em;
+		& > p {
+			padding: 2em;
+			margin-block-end: 0;
+			margin-block-start: 0;
+		}
+		&::first-letter {
+			font-size: 120%;
+			font-weight: 400;
+		}
+	}
+	@media (orientation: landscape) {
+		//horizontal layout
+		width: 33vw;
+		height: 100%;
+		& > .contentTextBox {
+			padding: 1em 1em 1em 0.5em;
+			position: absolute;
+			bottom: 0;
+			vertical-align: text-bottom;
+			width: 90%;
+		}
+	}
+	@media (orientation: portrait) {
+		//vertical layout
+		height: 33%;
+		width: 100%;
+		display: flex;
+		@include fixed(bottom);
+		& > .contentTextBox {
+			padding: 0em;
+			position: absolute;
+			bottom: 0;
+			vertical-align: middle;
+			width: 90%;
+		}
+	}
+}

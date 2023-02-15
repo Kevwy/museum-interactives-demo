@@ -1,6 +1,16 @@
 import * as React from "react";
-import { graphql } from "gatsby";
-import { landingPage, logoBox } from "./index.module.scss";
+import { graphql, Link } from "gatsby";
+import {
+	landingPage,
+	logoBox,
+	exhibitScroller,
+	exhibitCard,
+	exhibitImageWrapper,
+	exhibitInfoCard,
+	exhibitTitle,
+	exhibitDescription,
+} from "./index.module.scss";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Home = ({ data }) => {
 	const exhibitData = data.allExhibitJson.edges;
@@ -16,6 +26,30 @@ const Home = ({ data }) => {
 					</h2>
 				</div>
 			</div>
+			<div className={exhibitScroller}>
+				{exhibitData.map((edge) => {
+					const exhibit = edge.node;
+					return (
+						<div className={exhibitCard}>
+							<div className={exhibitImageWrapper}>
+								<GatsbyImage
+									image={exhibit.image.childImageSharp.gatsbyImageData}
+									layout="constrained"
+									objectFit="contain"
+								/>
+							</div>
+							<div className={exhibitInfoCard}>
+								<Link to={`/${exhibit.name}/`}>
+									<div className={exhibitTitle}>{exhibit.title.en}</div>
+									<div className={exhibitDescription}>
+										{exhibit.description.en}
+									</div>
+								</Link>
+							</div>
+						</div>
+					);
+				})}
+			</div>
 		</div>
 	);
 };
@@ -27,11 +61,17 @@ export const query = graphql`
 		allExhibitJson {
 			edges {
 				node {
+					name
 					title {
 						en
 					}
 					description {
 						en
+					}
+					image {
+						childImageSharp {
+							gatsbyImageData
+						}
 					}
 				}
 			}
