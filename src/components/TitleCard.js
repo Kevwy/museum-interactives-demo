@@ -6,8 +6,8 @@ import {
 } from "./TitleCard.module.scss";
 
 const instructions = {
-	en: "Click on the hotspots to learn more",
-	reo: "Lorem Epsum",
+	en: "click on a hotspot to learn more ➝",
+	reo: "lorem Epsum ➝",
 };
 
 const TitleCard = ({ className, title, subtitle = null, lang }) => {

@@ -101,7 +101,7 @@ button {
 	top: 2rem;
 	left: 0;
 	flex-direction: column;
-	padding-right: 10rem;
+	padding-right: 8rem;
 	padding-left: 3rem;
 	border-bottom: 2px inset whitesmoke;
 	border-radius: 0 16px 16px, 0;
@@ -112,7 +112,7 @@ button {
 	@media (orientation: landscape) {
 		min-width: 33vw;
 	}
-	@media (orientation: landscape) {
+	@media (orientation: portrait) {
 		min-width: fit-content;
 	}
 }

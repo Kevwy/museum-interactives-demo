@@ -15,7 +15,7 @@
 .instructionsTextBox {
 	width: max-content;
 	padding: 0.3em 1em;
-	border: rgba(0, 0, 0, 0.25) solid 2px;
+	border: rgba(0, 0, 0, 0.25) inset 2px;
 	background-color: #ffffff;
 	color: grey;
 	translate: 2em 1em;
@@ -41,10 +41,9 @@ h2 {
 
 h3 {
 	margin: 0;
-	text-transform: uppercase;
 	// TitleCard instructions text
 	font: {
 		weight: 350;
-		size: 1.5rem;
+		size: 1.4rem;
 	}
 }
