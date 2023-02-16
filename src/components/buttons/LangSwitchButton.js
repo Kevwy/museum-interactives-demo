@@ -1,7 +1,7 @@
 import * as React from "react";
-import { localeToDisplay } from "../utils/LocaleParser";
+import { localeToDisplay } from "../../utils/LocaleParser";
 
-import { langBtn } from "./components.module.scss";
+import { langBtn } from "./buttons.module.scss";
 
 const LanguageButton = ({ lang, onClick }) => {
 	return (
