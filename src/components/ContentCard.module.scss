@@ -1,59 +1,83 @@
-
 @use "styles/mixins" as *;
 
 $contentCardColor: rgba(128, 128, 128, 0.856);
 $contentCardTextColor: black;
 
 .contentCard {
-	width: 60%;
 	@include elevation(1);
-	background-color: $contentCardColor;
-	border-bottom: 5px outset whitesmoke;
-	color: $contentCardTextColor;
-	font-optical-sizing: auto;
-	text-align: justify;
+	@include float(left);
 	position: absolute;
 	bottom: 0;
-	@include float(left);
-	& > div {
+	width: 60%;
+	border-bottom: 5px outset whitesmoke;
+	background-color: $contentCardColor;
+	text-align: justify;
+	color: $contentCardTextColor;
+	font-optical-sizing: auto;
+	@media (orientation: landscape) {
+		height: 100%;
+		//horizontal layout
+		width: 33vw;
+		& > .contentTextBox {
+			position: absolute;
+			bottom: 0;
+			padding: 1em 1em 1em 0.5em;
+			vertical-align: text-bottom;
+		}
+	}
+	@media (orientation: portrait) {
+		@include fixed(bottom);
+		display: flex;
+		align-items: center;
+		//vertical layout
+		height: 33%;
+		width: 100%;
+		& > .contentTextBox {
+			//position: absolute;
+			top: 0;
+			height: fit-content;
+			padding: 0em;
+			vertical-align: middle;
+			border-bottom-right-radius: 10px;
+		}
+	}
+	.contentTextBox {
 		background-color: #dad9d9da;
 		border-top-right-radius: 10px;
 		box-shadow: rgba(39, 39, 39, 0.555) 0 1em 1.5em;
+		@media (orientation: landscape) {
+			position: absolute;
+			bottom: 0;
+			padding: 1em 1em 1em 0.5em;
+			vertical-align: text-bottom;
+		}
+		@media (orientation: portrait) {
+			top: 0;
+			height: fit-content;
+			padding: 0em;
+			vertical-align: middle;
+			border-bottom-right-radius: 10px;
+		}
 		& > p {
 			padding: 2em;
 			margin-block-end: 0;
 			margin-block-start: 0;
 		}
 		&::first-letter {
-			font-size: 120%;
 			font-weight: 400;
+			font-size: 120%;
 		}
 	}
-	@media (orientation: landscape) {
-		//horizontal layout
-		width: 33vw;
-		height: 100%;
-		& > .contentTextBox {
-			padding: 1em 1em 1em 0.5em;
-			position: absolute;
-			bottom: 0;
-			vertical-align: text-bottom;
+	p {	// ContentCard content text
+		font-weight: 500;
+		text-indent: 3rem;
+		@media (orientation: landscape) {
+			line-height: 1.5em;
+			font-size: 1.2rem;
 		}
-	}
-	@media (orientation: portrait) {
-		//vertical layout
-		height: 33%;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		@include fixed(bottom);
-		& > .contentTextBox {
-			padding: 0em;
-			//position: absolute;
-			top: 0;
-			vertical-align: middle;
-			height: fit-content;
-			border-bottom-right-radius: 10px;
+		@media (orientation: portrait) {
+			line-height: 1.5em;
+			font-size: 1.5rem;
 		}
 	}
 }

@@ -1,23 +1,19 @@
 import * as React from "react";
 import {
-	titleCard,
 	titleTextBox,
 	subtitleTextBox,
 	instructionsTextBox,
 } from "./TitleCard.module.scss";
 
-//TODO: #11 render instructions conditionally
-//TODO: #11 render instructions conditionally
 const instructions = {
 	en: "Click on the hotspots to learn more",
-	reo: "Lorem Epsum"
+	reo: "Lorem Epsum",
 };
 
-
-const TitleCard = ({ title, subtitle = null, lang }) => {
+const TitleCard = ({ className, title, subtitle = null, lang }) => {
 	if (subtitle) {
 		return (
-			<section className={titleCard}>
+			<section className={className}>
 				<div className={titleTextBox}>
 					<h1>{title[lang]}</h1>
 				</div>
@@ -31,7 +27,7 @@ const TitleCard = ({ title, subtitle = null, lang }) => {
 		);
 	}
 	return (
-		<section className={titleCard}>
+		<section className={className}>
 			<h1>{title[lang]}</h1>
 		</section>
 	);

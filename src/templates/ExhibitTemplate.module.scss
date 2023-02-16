@@ -8,48 +8,31 @@ h1,
 h2,
 h3,
 p {
+	user-select: none;
 	font: {
 		family: $fontFamily;
 		style: normal;
 	}
-	user-select: none;
-}
-
-h1 {
-	font: {
-		weight: 600;
-		size: 3rem;
-	}
-}
-
-h2 {
-	font: {
-		weight: 300;
-		size: 1.5rem;
-	}
-	text-transform: uppercase;
-	margin-top: 0;
-}
-
-h3 {
-	font: {
-		weight: 350;
-		size: 1.5rem;
-	}
-	text-transform: uppercase;
-	margin: 0;
-}
-p {
-	text-indent: 3rem;
-	font: {
-		weight: 600;
-		size: 1.5rem;
-	}
-	line-height: 1.8em;
 }
 
 button {
 	@include elevation(3);
+	box-sizing: border-box;
+
+	cursor: pointer;
+
+	display: inline-flex;
+	align-items: center;
+	margin: $btnMargin;
+
+	height: 4rem;
+	padding: 0.3em 1em;
+	border: rgba(0, 0, 0, 0.25) solid 2px;
+	border-radius: 2px;
+
+	background-color: #ffffff;
+	color: rgb(46, 46, 46);
+	touch-action: manipulation;
 	font: {
 		family: $fontFamily;
 		style: normal;
@@ -59,67 +42,77 @@ button {
 	text: {
 		transform: uppercase;
 		shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-        align: center;
+		align: center;
 	}
-    color: rgb(46, 46, 46);
-
-	display: inline-flex;
-	align-items: center;
-
-	height: 4rem;
-	box-sizing: border-box;
-	padding: 0.3em 1em;
-	margin: $btnMargin;
-
-	background-color: #ffffff;
-	border: rgba(0, 0, 0, 0.25) solid 2px;
-	border-radius: 2px;
-
-	cursor: pointer;
-	touch-action: manipulation;
 
 	&:active {
-		box-shadow: rgba(40, 36, 80, 0.5) 0 1px 30px;
-		transition-duration: 0.1s;
 		background-color: #727272a2;
+		transition-duration: 0.1s;
+		box-shadow: rgba(40, 36, 80, 0.5) 0 1px 30px;
 	}
 	&:hover {
-		box-shadow: rgba(39, 35, 71, 0.5) 0 1px 30px;
-		transition-duration: 0.1s;
 		border-bottom: rgba(128, 128, 128, 0.37) outset 2px;
+		transition-duration: 0.1s;
+		box-shadow: rgba(39, 35, 71, 0.5) 0 1px 30px;
 	}
 }
 
 .landingImgWrapper {
 	@include elevation(0);
-	position: absolute;
 	display: flex;
+	position: absolute;
 	justify-content: center;
-	width: 100%;
 	height: 80vh;
+	width: 100%;
 
 	@media (orientation: landscape) {
 		top: 10vh;
 		bottom: 5vh;
 	}
-	@media (orientation: portrait){
+	@media (orientation: portrait) {
 		bottom: 5vh;
 	}
 }
 
 .hotspotImgWrapper {
 	@include elevation(0);
-	position: absolute;
 	display: flex;
+	position: absolute;
 	justify-content: center;
 	@media (orientation: landscape) {
 		left: 33vw;
-		width: 67vw;
 		height: 100vh;
+		width: 67vw;
 	}
 	@media (orientation: portrait) {
 		bottom: 33vh;
 		height: 67vh;
 		width: 100vw;
+	}
+}
+
+.titleCard {
+	@include elevation(2);
+
+	box-sizing: border-box;
+
+	display: flex;
+	position: absolute;
+	top: 2rem;
+	left: 0;
+	flex-direction: column;
+	padding-right: 10rem;
+	padding-left: 3rem;
+	border-bottom: 2px inset whitesmoke;
+	border-radius: 0 16px 16px, 0;
+
+	background-color: rgba(26, 26, 26, 0.65);
+	color: white;
+
+	@media (orientation: landscape) {
+		min-width: 33vw;
+	}
+	@media (orientation: landscape) {
+		min-width: fit-content;
 	}
 }

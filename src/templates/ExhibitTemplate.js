@@ -6,13 +6,13 @@ import { useIdleTimer } from "react-idle-timer";
 import TitleCard from "../components/TitleCard";
 import ContentCard from "../components/ContentCard";
 import ImageBox from "../components/ImageBox";
-import LangSwitchButton from "../components/LangSwitchButton";
-import HomeButton from "../components/HomeButton";
+import LangSwitchButton from "../components/buttons/LangSwitchButton";
+import HomeButton from "../components/buttons/HomeButton";
 // import InteractiveImage from "../components/InteractiveImage";
 
 import { ExhibitContext } from "../contexts/ExhibitContext";
 
-import { hotspotImgWrapper } from "./ExhibitTemplate.module.scss";
+import { hotspotImgWrapper, titleCard } from "./ExhibitTemplate.module.scss";
 
 const ExhibitTemplate = ({ data }) => {
 	const [exhibit, setExhibit] = useContext(ExhibitContext);
@@ -22,6 +22,7 @@ const ExhibitTemplate = ({ data }) => {
 	const [isLanding, setIsLanding] = useState(true);
 	const [lang, setLang] = useState("en");
 	const hotspots = data.exhibitJson.hotspots;
+
 	// Mount idle timer
 	const onIdle = () => {
 		resetToLanding();
@@ -42,15 +43,16 @@ const ExhibitTemplate = ({ data }) => {
 	const exhibitImageSharp = data.exhibitJson.image.childImageSharp;
 	const exhibitImageMap = data.exhibitJson.map.childrenMapJson; //TODO #14: Change -> imageMap : JSON.parse(data.exhibitJson.imageMap),
 
-	// TODO: InteractiveImage Component logic
-	// const exhibitImageSettings = {
-	// 	id: "imageBase",
-	// 	imageMap: data.exhibitJson.map.childrenMapJson,
-	// 	srcHeight: exhibitImageSharp.original.height,
-	// 	srcWidth: exhibitImageSharp.original.width,
-	// 	objectFit: imageFit,
-	// 	objectPosition: imagePosition,
-	// };
+	/* TODO: InteractiveImage Component logic
+	const exhibitImageSettings = {
+		id: "imageBase",
+		imageMap: data.exhibitJson.map.childrenMapJson,
+		srcHeight: exhibitImageSharp.original.height,
+		srcWidth: exhibitImageSharp.original.width,
+		objectFit: imageFit,
+		objectPosition: imagePosition,
+	};
+	*/
 
 	// event handlers
 	const handleLangSwitch = (lang) => {
@@ -90,6 +92,7 @@ const ExhibitTemplate = ({ data }) => {
 					onClick={handleHotspotClick}
 				/> */}
 				<TitleCard
+					className={titleCard}
 					title={data.exhibitJson.title}
 					subtitle={data.exhibitJson.description}
 					lang={lang}
@@ -109,7 +112,7 @@ const ExhibitTemplate = ({ data }) => {
 					objectFit={imageFit}
 					objectPosition={imagePosition}
 				/>
-				<TitleCard title={focus.title} lang={lang} />
+				<TitleCard className={titleCard} title={focus.title} lang={lang} />
 				<ContentCard description={focus.description} lang={lang} />
 				<HomeButton onClick={resetToLanding} />
 				{/*<LangSwitch />*/}
